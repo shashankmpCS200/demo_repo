@@ -1,0 +1,26 @@
+
+*****************KADANE ALGORITHM*************************
+
+long long maxSubarraySum(int arr[], int n){
+        
+        long long curr=0;
+        
+        long long maxsum=INT_MIN;
+        
+        for(int i=0;i<n;i++){
+            
+            curr+=arr[i];
+            
+            if(curr<arr[i]){           //here usually we write if(curr<0){ curr=0; }.....but it doesn't work when all numbers are negative so use this
+                
+               curr=arr[i];
+               
+            }
+            
+            maxsum=max(maxsum,curr);
+            
+        }
+        
+        return maxsum;
+        
+    }
